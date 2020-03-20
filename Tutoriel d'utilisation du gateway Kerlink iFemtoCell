@@ -1,0 +1,8 @@
+- Brancher le gateway au Fablab et se connecter au même sous-réseau
+- Faire la commande suivante: nmap -sP 192.168.1.* qui permet de scanner les adresses IP disponibles dans le sous-réseau
+- Récupérer l'adresse IP du gateway (klk-wifc-xxxxxx) et votre propre adresse IP
+- Se connecter en SSH sur le gateway avec l'utilisateur root. Le mot de passe est pdmk-xxxxxx où les x correspondent aux 6 derniers chiffres de l'ID du gateway affiché au dos de celui ci.
+- Suivre la partie "Install IPK package" du tuto: https://www.chirpstack.io/gateway-bridge/gateway/kerlink/#kerlink-ifemtocell
+- Pour diriger la gateway sur le network server local, aller dans /user/spf/etc/global_conf.json. Remplacer le server_address par votre adresse IP (sans port). Récupérer aussi l'ID complet du gateway dans ce fichier ou dans local_conf.json
+- Relancer le gateway avec /user/spf/bin/spf et regarder s'il reçoit des messages de device et y répond.
+- Au besoin pour vérifier la communication entre la gateway et votre ordinateur, lancer la commande: nc -u votre_adresse_ip 1700 sur la gateway et la commande: nc -ul 1700 sur votre ordinateur
